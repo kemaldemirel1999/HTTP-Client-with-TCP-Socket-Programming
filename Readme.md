@@ -1,79 +1,79 @@
-server.py isimli HTTP sunucusunu çalıştırınız ve ilgili requestleri gönderiniz.
+run server.py HTTP Client, then send request
 
 --------------------------------
 
 GET/isPrime
 
-parametre ismi "number" olmalı
+parameter name must be "number" 
 
-sayı asal olmalı
+number must be prime number
 
-tam sayı olmalı
+must be integer
 
-ornek request: http://localhost:8080/isPrime?number=11
+example request: http://localhost:8080/isPrime?number=11
 
-sayı asal ve parametre ismi "number" olduğunda örnek response: {"number": 5, "isPrime": "True"}
+when the number is a prime number and parameter name is "number", then response: {"number": 5, "isPrime": "True"}
 
 
 
 ---------------------------------
 GET/download
 
-istemcinin sunucudan dosyayı indirmesini sağlar
+Allows to client to download the file from the server
 
-ornek:  http://localhost:8080/download?fileName=tobbetulogo.png
+example:  http://localhost:8080/download?fileName=kemaldemirel.png
 
-tobbetulogo.png indirilecek
+kemaldemirel.png will be download
 
-Dosya indirilise: HTTP 200 OK ve ilgili mesaj
+After the file is downloaded: HTTP 200 OK and related message
 
-fileName parametresi yoksa: HTTP 404 NOT FOUND ve ilgili mesaj
+If there is no fileName parameter: HTTP 404 NOT FOUND and related message
 
-dosya yoksa: HTTP 200 OK ve ilgili mesaj
+If there is no file: HTTP 200 OK and related message
 
 ---------------------------------
 PUT/rename
 
-dosya isminin değiştirilmesini sağlar.
+Allows to filename to be changed
 
-ornek: http://localhost:8080/rename?oldFileName=demirel.txt&newName=btc.txt
+example: http://localhost:8080/rename?oldFileName=demirel.txt&newName=btc.txt
 
-oldFileName parametresi yoksa: HTTP 404 NOT FOUND ve ilgili mesaj
+If there is no oldFileName parameter: HTTP 404 NOT FOUND and related message
 
-newName parametresi yoksa: HTTP 404 NOT FOUND ve ilgili mesaj
+If there is no newName parameter: HTTP 404 NOT FOUND and related message
 
-oldFileName ve newName parametresi yoksa: HTTP 404 NOT FOUND ve ilgili mesaj
+If there is no oldFileName and newName parameter: HTTP 404 NOT FOUND and related message
 
-oldFileName parametresinin belirttiği dosya yoksa: HTTP 200 OK ve ilgili mesaj
+If the file specified by the oldFileName parameter does not exists: HTTP 200 OK and related message
 
-Dosya ismi başarıyla değişirse: HTTP 200 OK ve ilgili mesaj
+If the filename successfully changed: HTTP 200 OK and related message
 
 ---------------------------------
 
 DELETE/remove
 
-dosyanın silinmesini sağlar.
+Allows to file to be removed
 
-ornek: http://localhost:8080/remove?fileName=eth.txt
+example: http://localhost:8080/remove?fileName=eth.txt
 
-fileName parametresi yoksa: HTTP 404 NOT FOUND ve ilgili mesaj
+If there is no fileName parameter: HTTP 404 NOT FOUND and related message
 
-fileName parametresinin belirttiği dosya bulunamadı: HTTP 404 NOT FOUND ve ilgili mesaj
+If the file that is specified by fileName parameter is not found: HTTP 404 NOT FOUND and related message
 
-dosya silinirse: HTTP 200 OK ve ilgili mesaj
+If the file is removed: HTTP 200 OK and related message
 
 -------------------------------------
 
 POST/upload
 
-sunucuya dosya upload edilmek istenmekte
+If client wants to upload a file to the server
 
-ornek:  http://localhost:8080/upload?fileName=metinkemal.txt
+example:  http://localhost:8080/upload?fileName=metinkemal.txt
 
-fileName parametresi yoksa: HTTP 404 NOT FOUND ve ilgili mesaj
+If there is no fileName parameter: HTTP 404 NOT FOUND and related message
 
-dosya yoksa: HTTP 200 OK ve ilgili mesaj
+If the file is not found: HTTP 200 OK and related message
 
-başarılı olursa: HTTP 200 OK ve ilgili mesaj
+If successful: HTTP 200 OK and related message
 
 ---------------------------------------
